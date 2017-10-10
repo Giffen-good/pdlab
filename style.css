@@ -1,0 +1,249 @@
+/*!
+Theme Name: pdlab
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pdlab
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+pdlab is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# General
+# Navigation
+# Products in-page
+# Single Post
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+li {
+	list-style-type: none;
+
+	
+}
+a {
+	text-decoration: none;
+	color:#FAF776;
+}
+body {
+	background-color:#1A1A1A;
+	color:#FAF776;
+	display:flex;
+	flex-direction: column;
+	overflow-x: hidden;
+	min-height: 100vh;
+	margin:0;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+
+}
+#page {
+	flex:1;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+#primary-menu li {
+	margin:0 20px;
+	font-size: 10px;
+	text-transform: uppercase;
+
+
+}
+#primary-menu {
+	right:0;
+	position:absolute;
+	display: inline-flex;
+}
+#site-navigation {
+	position: relative;
+	border-bottom:solid 1px #FAF776;
+}
+.site-branding {
+	left:0;
+	display:inline-block;
+	margin:0 20px;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Products in-page
+--------------------------------------------------------------*/
+
+.posts-bin {
+	margin: 0 auto; 
+	width:95%;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.post-container:first-child, .post-container:nth-child(2), .post-container:nth-child(7), 
+.post-container:nth-child(8), .post-container:nth-child(9), .post-container:nth-child(10) {
+	flex-basis: 48%;
+
+}
+.post-container:nth-child(3), .post-container:nth-child(4), .post-container:nth-child(5) {
+	flex-basis: 30%
+}
+.post-container:nth-child(6) {
+	flex-basis: 100%
+}
+.post-pic {
+	height:29vw;
+	background-size: cover;
+	background-position: center;
+	max-height:385px;
+	position:relative;
+}
+.post-pic a {
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	height:100%;
+	width:100%;
+}
+
+.post-title {
+	height:85px;
+	text-transform: uppercase;
+	font-size: 25px;
+}
+.marquee {
+	height:70px;
+	border-bottom: solid 1px;
+	margin-bottom:40px;
+	font-size:35px;
+	padding-top:20px;
+	text-transform: uppercase;
+	overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+# Single post
+--------------------------------------------------------------*/
+
+.post-nav > a {
+	display:table-cell;
+	width:50%;
+	position: relative;
+	height:30vw;
+}
+.post-nav > a:first-child {
+	border-right:solid 1px;
+}
+.post-picture {
+	height:70%;
+	width:70%;
+	position:absolute;
+	left:50%;
+	transform: translate(-50%,-50%);
+	top:50%;
+	background-position: center;
+	background-size: cover;
+}
+.post-nav {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 390px;
+    border-top:solid 1px;
+    display:table;
+}
+.single-post #page {
+	position:relative;
+}
+.nav-title {
+	position: absolute;
+	bottom:-30px;
+	text-transform: uppercase;
+	font-size:22px;
+}
+.pp {
+	font-size:10px;
+	text-transform: uppercase;
+	margin-left:25px;
+	margin-top:15px;
+
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer-icon img {
+	height:16px;
+	width:16px;
+	
+}
+.sm-icon {
+	position:absolute;
+	right:20px;
+	top:50%;
+	transform: translateY(-50%);
+}
+footer {
+	position:relative;
+	height:53px;
+	border-top:solid 1px;
+	font-size:10px;
+	text-transform: uppercase;
+}
+footer > p {
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	margin-top:0;
+}
+.site-info {
+	top:50%;
+	transform: translateY(-50%);
+	position:absolute;
+	left:20px;
+}
+a.footer-icon {
+	margin-left: 10px;
+	margin-right:10px;
+}
+
+
+
+
+
+
+
+
