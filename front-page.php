@@ -72,7 +72,7 @@
 						?><div id="ptp-<?php echo $k; ?>" class="ptp-<?php echo $k; ?>"><?php
 							foreach($tier as $image) {
 								?>
-								<div style="background-image:url(<?php echo $image; ?>)" class=" cin hpost-image ptp-<?php echo $k; ?>"></div>
+								<div style="background-image:url(<?php echo $image; ?>)" class="r cin hpost-image ptp-<?php echo $k; ?>"></div>
 								<?php
 							}
 							?></div><?php
