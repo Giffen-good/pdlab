@@ -24,6 +24,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # General
 # Navigation
+# Front-page
 # Products in-page
 # Single Post
 # Forms
@@ -45,7 +46,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
+@font-face {
+	font-family:mono;
+	src: url('pic/MaisonNeueMono.otf');
+}
 li {
 	list-style-type: none;
 
@@ -53,22 +57,48 @@ li {
 }
 a {
 	text-decoration: none;
-	color:#FAF776;
+	color:#f9fb8c;
 }
 body {
-	background-color:#1A1A1A;
-	color:#FAF776;
+	background-color:#1a191b;
+	color:#f9fb8c;
 	display:flex;
 	flex-direction: column;
 	overflow-x: hidden;
 	min-height: 100vh;
 	margin:0;
-	font-family: sans-serif;
+	font-size:13px;
+	font-family: mono;
 	letter-spacing: 1px;
 
 }
 #page {
 	flex:1;
+}
+
+.tr {
+	text-transform: uppercase;
+}
+
+.ti {
+	font-size:1.5rem;
+	text-align: center;
+	width:100%;
+}
+.cen-xy {
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	position:absolute;
+}
+.cen-y {
+	top:50%;
+	transform: translateY(-50%);
+	position:absolute;
+}
+.cin {
+	background-size: cover;
+	background-position: center;
 }
 
 /*--------------------------------------------------------------
@@ -84,22 +114,221 @@ body {
 }
 #primary-menu {
 	right:0;
+	margin:0;
+	margin-right: 15px;
 	position:absolute;
 	display: inline-flex;
+	top:50%;
+	transform: translateY(-50%);
 }
 #site-navigation {
 	position: relative;
-	border-bottom:solid 1px #FAF776;
+	border-bottom:solid 1px #f9fb8c;
 }
 .site-branding {
 	left:0;
 	display:inline-block;
-	margin:0 20px;
+	margin:0 35px;
+}
+
+.site-title a {
+	background-image:url(pic/pdlogo.png);
+	    height: 100%;
+    position: absolute;
+    width:100%;
+}
+.site-title {
+	height:26px;
+	width:26px;
+	position:relative;
 }
 
 
+/*--------------------------------------------------------------
+# Front-page
+--------------------------------------------------------------*/
+.bnm .dfirs {
+	opacity:1;
+}
+.bnm {
+	position:relative;
+}
+.bnm div {
+	position:absolute;
+	width:100%;
+	height:100%;
 
+}
+.ccon {
+	display:flex;
+	border-bottom:solid 1px;
+}
+.cone {
+	display:inline-block;
+}
+.cone img {
+	max-width:50vw;
+	margin:45px;
+}
+.ctwo {
+	position:relative;
+	width:100%;
+}
+.inner-contain {
+	width:90%;
+}
+.four-up {
+	display:flex;
+	flex-wrap: wrap;
+	width:90%;
+	margin:0 auto;
+	margin-bottom:1em;
+	justify-content: space-around;
 
+}
+.about-us.title p {
+	text-align:left;
+	margin:10px 0;
+}
+.learn-more-text {
+}
+.learn-more {
+	margin-top:20px;
+
+	 box-sizing: border-box;
+    padding: 5px 6px;
+    border: solid 1px;
+border-radius: 20px;
+font-size:9px;
+    display: inline-block;
+
+}
+.brands {
+	margin-top:40px;
+}
+.brand {
+	flex-basis: 16%;
+	height:13vw;
+	margin:1rem;
+
+}
+.feed-container {
+	margin:60px 0;
+	position:relative;
+}
+.insta-tag {
+	padding-top:60px;
+	border-top:solid 1px;
+}
+.instagram-feed {
+	    height: calc((100vw - 150px) /4.4 );
+	position:relative;
+}
+.slick-arrow {
+	position:absolute;
+	z-index: 2;
+}
+.aright {
+	transform:  translateY(-50%) rotate(180deg);
+}
+svg {
+	fill:#f9fb8c;
+}
+.slick-list, .slick-track, .ig-post {
+	height:100%;
+}
+.ig-post.pp {
+	margin:0 15px;
+}
+.ig-post {
+	display: inline-block;
+
+}
+.gright {
+	right:0;
+}
+.gradient {
+	background-color: #1a191b;
+	opacity: 0.7;
+	position:absolute;
+	width:5vw;
+	z-index:1;
+	height: calc((100vw - 150px) / 4.4);
+}
+.recent-posts {
+	display:flex;
+}
+.recent-posts > div:last-child {
+	flex-basis: 60%
+}
+.rlp {
+	flex-basis:35%;
+	display:flex;
+	flex-wrap: wrap;
+	border-left:solid 1px;
+	border-right:solid 1px;
+}
+.rlp a {
+	flex-basis: 100%;
+	    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #47462A;
+    display: flex;
+}
+.rlp a:last-child {
+	border-bottom: none;
+}
+.hdate {
+	min-width: 75px;
+	color:#47462A;
+	font-size:10px;
+}
+.hpost-box:hover {
+	background-color:#f9fb8c; 
+}
+.hpost-box:hover > .hpost-title {
+	color:#1a191b;
+}
+.hpost-title p {
+	    margin: 0;
+    margin-left: 20px;
+}
+.hpost-title {
+	    flex-basis: 75%;
+    vertical-align: middle;
+}
+.recent-text {
+	flex-basis:5%;
+	position:relative;
+
+}
+.recent-text div {
+	    transform: rotate(270deg) translate(-50%,-50%);
+    transform-origin: 0% 0%;
+    width: 106px;
+    position: absolute;
+    top: 50%;
+    display: block;
+    left: 50%;
+}
+.bnm > .dfirs.opassz {
+	opacity: 0
+}
+.bnm > div {
+	opacity:0;
+}
+.bnm > .dfirs {
+	opacity: 1;
+}
+.bnm > .opassz.dfirs {
+	opacity: 0
+}
+.bnm > .opasso.dfirs {
+	opacity: 1;
+}
+.bnm > .opasso {
+	opacity: 1;
+}
 /*--------------------------------------------------------------
 # Products in-page
 --------------------------------------------------------------*/

@@ -119,9 +119,11 @@ add_action( 'widgets_init', 'pdlab_widgets_init' );
 function pdlab_scripts() {
 	wp_enqueue_style( 'pdlab-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'pdlab-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script('pdlab-jquery-3.2.1.min', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', '20151215', true );
+	wp_enqueue_script( 'pdlab-slick.min', get_template_directory_uri() . '/js/slick.min.js', '20151215', true );
+	wp_enqueue_script( 'transitions', get_template_directory_uri() . '/js/transitions.js', '20151215', true );
 
-	wp_enqueue_script( 'pdlab-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -183,4 +185,37 @@ add_filter( 'single_template', function ($single_template) {
      return $single_template;
 
 }, 10, 3 );
+function create_posttype() {
+ 
+    register_post_type( 'projects',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'projects' ),
+                'singular_name' => __( 'project' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'projects'),
+            'taxonomies'  => array( 'category' )
+        )
+    );
+}
+add_action( 'init', 'create_posttype' );
+function create_postype() {
+ 
+    register_post_type( 'jobs',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'jobs' ),
+                'singular_name' => __( 'job' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'jobs')
+        )
+    );
+}
+add_action( 'init', 'create_postype' );
 
