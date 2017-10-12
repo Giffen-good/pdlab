@@ -11,9 +11,17 @@
 						$thumb_url = $thumb_url_array[0]; 
 					} 
 					?>
-				<img class="the-man" src="<?php echo $thumb_url; ?>" />
-				<div class="bod team-text"><p><?php the_content(); ?></p></div>
-				<div class="bb honorific"><p><?php the_field('honorific'); ?></p></div>
+			<div class="two-up">
+				<div class="tuuu">
+					<div>
+						<img class="the-man" src="<?php echo $thumb_url; ?>" />
+						<div class="bb honorific"><p><?php the_field('honorific'); ?></p></div>
+					</div>
+				</div>
+				<div class="tuple">
+					<div class="bod team-text"><p><?php the_content(); ?></p></div>
+				</div>
+			</div>
 <?php
 		}
 	}

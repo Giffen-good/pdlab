@@ -12,26 +12,32 @@ if ($ty->have_posts()) {
 
 	<div class="bod job-text"><p><?php the_content(); ?></p></div>
 	<div class="jobs">
+		<div class="log">
 
 		<?php 
 		if (have_rows('job')) {
 			while( have_rows('job')) {
 				the_row();
 				?>
-		<div class="job">
-
-				<div class="bod job-title"><?php the_sub_field('title'); ?></div>
-				<div class="bod availablility"><?php the_sub_field('pt_ft'); ?></div>
+			<a class="hpost-box">
+				<div class="bod job-title hpost-title"><?php the_sub_field('title'); ?></div>
+				<div class="bod availablility hdate"><?php the_sub_field('pt_ft'); ?></div>
+				
+			</a>
+			<div>
 				<div class="bod description"><?php the_sub_field('description'); ?></div>
 				<div class="ex">
 					<span></span>
 					<span></span>
 				</div>
-		</div>
+			</div>
+				
 <?php						
 			}
 		}
-?>	
+?>		
+		</div>
+
 	</div>
 
 						

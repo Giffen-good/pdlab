@@ -25,14 +25,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # General
 # Navigation
 # Front-page
-# Products in-page
+# Projects page
+# Projects in-page
 # Single Post
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
+# Log Page
+# Contact
+# Studio page
+# Footer
 # Clearings
 # Widgets
 # Content
@@ -69,11 +68,13 @@ body {
 	margin:0;
 	font-size:13px;
 	font-family: mono;
+	line-height: 1.3;
 	letter-spacing: 1px;
 
 }
 #page {
 	flex:1;
+	position:relative;
 }
 
 .tr {
@@ -96,15 +97,51 @@ body {
 	transform: translateY(-50%);
 	position:absolute;
 }
+.cen-x {
+	left:50%;
+	transform: translateX(-50%);
+	position:absolute;
+}
 .cin {
 	background-size: cover;
 	background-position: center;
 }
-
+.opassz {
+	opacity: 0;
+}
+.tu-one .prp-1, .tu-one .prp-2, .tu-one .prp-3 {
+	height:100%;
+	width:100%;
+	opacity: 0;
+}
+.opasso {
+	opacity: 1;
+}
+#content > div > .ti {
+	font-size:2.5rem;
+}
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-
+@keyframes headerr {
+	0% {
+		transform:translateY(-70px);
+	}
+	100% {
+		transform:translateY(0);
+	}
+}
+.marg {
+	margin-top:56px;
+}
+#masthead.fixed-header {
+	animation-name: headerr;
+	animation-duration: 0.8s;
+	    position: fixed;
+    width: 100%;
+    background-color: #1a191b;
+    z-index: 5;
+}
 #primary-menu li {
 	margin:0 20px;
 	font-size: 10px;
@@ -317,6 +354,7 @@ svg {
 .bnm > div {
 	opacity:0;
 }
+
 .bnm > .dfirs {
 	opacity: 1;
 }
@@ -330,9 +368,60 @@ svg {
 	opacity: 1;
 }
 /*--------------------------------------------------------------
-# Products in-page
+# Projects page
 --------------------------------------------------------------*/
+.page-id-7 #content {
+	position:absolute;
+	height:calc(100% - 56px);
+	width:100%;
+}
+.projects-page,
+.projects-page .two-up,.tu-two {
+	height:100%;
+	width:100%;
 
+}
+.projects-page .two-up {
+	display:flex;
+
+}
+.tu-one {
+	flex-basis: 52%;
+	position:relative;
+	overflow: hidden;
+}
+
+.tu-two {
+	position:relative;
+	border-left:solid 1px;
+}
+.tu-two a:first-child {
+	top:calc(45% - 100px);
+	font-size:2vw;
+}
+.tu-two a:last-child {
+	top:calc(49% + 100px);
+	left:61px;
+	font-size:12vw;
+}
+.tu-two a {
+	white-space: nowrap;
+	top:41%;
+	text-transform: uppercase;
+	font-size:4.5vw;
+	left:80px
+}
+.tu-one .opasso {
+	opacity: 1;
+}
+
+
+/*--------------------------------------------------------------
+# Projects in-page
+--------------------------------------------------------------*/
+.post-pic img {
+	width:100%;
+}
 .posts-bin {
 	margin: 0 auto; 
 	width:95%;
@@ -340,22 +429,21 @@ svg {
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-.post-container:first-child, .post-container:nth-child(2), .post-container:nth-child(7), 
-.post-container:nth-child(8), .post-container:nth-child(9), .post-container:nth-child(10) {
-	flex-basis: 48%;
 
+.post-container
+{
+	margin-bottom: 50px;
+	display:flex;
+	flex-direction: column;
+	flex-basis: 30%;
 }
-.post-container:nth-child(3), .post-container:nth-child(4), .post-container:nth-child(5) {
-	flex-basis: 30%
+.post-container div {
+	flex-grow: 1;
 }
-.post-container:nth-child(6) {
-	flex-basis: 100%
-}
+
 .post-pic {
-	height:29vw;
 	background-size: cover;
 	background-position: center;
-	max-height:385px;
 	position:relative;
 }
 .post-pic a {
@@ -370,13 +458,20 @@ svg {
 .post-title {
 	height:85px;
 	text-transform: uppercase;
-	font-size: 25px;
+	font-size: 2.7rem;
+	margin-top:80px;
+	text-align: center;
+}
+.body-text {
+	    width: 50%;
+    margin: 0 auto;
 }
 .marquee {
 	height:70px;
 	border-bottom: solid 1px;
 	margin-bottom:40px;
 	font-size:35px;
+	width:100vw;
 	padding-top:20px;
 	text-transform: uppercase;
 	overflow: hidden;
@@ -385,7 +480,34 @@ svg {
 /*--------------------------------------------------------------
 # Single post
 --------------------------------------------------------------*/
-
+.slider {
+	position:relative;
+}
+.slick-dots {
+	text-align: center;
+}
+.slick-dots .slick-active button {
+	background-color:#f9fb8c;
+}
+.slick-dots button {
+	border: solid 1px #f9fb8c;
+    border-radius: 20px;
+    text-indent: -9999px;  
+    padding:3px 8px;
+    transform: scale(0.5);
+    background-color: #1a191b;
+}
+.slick-dots li {
+	display:inline-block;
+}
+.single-post .slick-track {
+	display:table;
+}
+.single-post .slick-track > div {
+	vertical-align: middle;
+	display:table-cell;
+	padding:0 80px;
+}
 .post-nav > a {
 	display:table-cell;
 	width:50%;
@@ -406,13 +528,12 @@ svg {
 	background-size: cover;
 }
 .post-nav {
-	position: absolute;
-    bottom: 0;
     width: 100%;
     max-height: 390px;
     border-top:solid 1px;
     display:table;
 }
+
 .single-post #page {
 	position:relative;
 }
@@ -428,6 +549,168 @@ svg {
 	margin-left:25px;
 	margin-top:15px;
 
+}
+
+/*--------------------------------------------------------------
+# Log page
+--------------------------------------------------------------*/
+.log a {
+	display:flex;
+	    padding: 30px 20%;
+    justify-content: space-between;
+	border-bottom: solid 1px #47462A;
+}
+.log-page .hpost-title {
+	margin-left:0;
+	flex-basis: 50%;
+}
+.log a:last-child {
+	border-bottom: none;
+}
+
+.asdf  {
+	    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+/*--------------------------------------------------------------
+#Team Page
+--------------------------------------------------------------*/
+.team-page .two-up {
+	display:flex;
+	margin:60px 0;
+
+}
+.tuuu {
+	flex-basis: 50%;
+	position:relative;
+}
+.tuuu > div {
+	margin:0 auto;
+	width:90%;
+}
+.the-man {
+	width:100%;
+}
+
+.tuple {
+	flex-basis: 50%
+}
+.team-text {
+	width:80%;
+	margin-left: 2rem;
+}
+.team-title {
+	margin-top:50px;
+}
+/*--------------------------------------------------------------
+#Contact
+--------------------------------------------------------------*/
+.location-pic {
+	    width: 275px;
+
+}
+.contact-page {
+    margin:70px 0;
+    width:100%;
+    height:400px;
+    position:relative;
+}
+.contact-page > div {
+	position:absolute;
+	display:inline-block;
+	overflow: hidden;
+}
+
+.contact.description {
+	float:right;
+	overflow:hidden;
+	display:table;
+	height:330px;
+	margin-left:70px;
+	font-size:11px;
+}
+.contact.description > div {
+	    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+#Studio page
+--------------------------------------------------------------*/
+.studio-page {
+	display:flex;
+}
+.studio-page .ccone {
+	flex-basis:50%;
+}
+.ccone > div {
+	width:80%;
+	margin:0 auto;
+}
+.studio-title {
+	text-align:left;
+}
+.cctwo {
+	flex-basis:50%;
+}
+
+/*--------------------------------------------------------------
+# Job
+--------------------------------------------------------------*/
+.jobs .hpost-box {
+	border-bottom: none;
+}
+.bod.description {
+	height: 0;
+	border-bottom: solid 1px #47462A;
+    overflow: hidden;
+    	padding:0 20%;
+	transition:height;
+	transition-delay: 0.5s;
+	color:#1a191b;
+	background-color:#f9fb8c;
+}
+.jobs-title p {
+	margin:0;
+}
+.jobs-title {
+	margin-top:80px;
+	margin-bottom:30px;
+}
+.job-text {
+	width:50%;
+	margin:0 auto;
+	margin-bottom:100px;
+}
+
+.ex {
+	    position: absolute;
+    top: -61px;
+    left: 25px;
+    height: 25px;
+    width: 25px;
+}
+.ex span {
+	border-bottom: solid 1px #1a191b;
+    width: 100%;
+    display: table;
+}
+.ex span:last-child {
+	    transform: rotate(-45deg) translate(-9px,10px);
+}
+.ex span:first-child {
+	    transform: rotate(45deg) translate(10px,10px);
+}
+.bod.description.stretch {
+	height:100%;
+	transition:height;
+	transition-delay: 0.5s;
 }
 /*--------------------------------------------------------------
 # Footer

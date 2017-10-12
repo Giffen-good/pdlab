@@ -11,8 +11,10 @@
 						$thumb_url = $thumb_url_array[0]; 
 					} 
 					?>
-						<div class="location-pic" style="background-image:url(<?php echo $thumb_url; ?>)"></div>
-						<div class="contact description"><p><?php the_content(); ?></p></div>
+					<div class="cen-xy">
+						<img class="location-pic" src="<?php echo $thumb_url; ?>"/>
+						<div class="contact description"><div><p><?php the_content(); ?></p></div></div>
+					</div>
 <?php
 	}
 }

@@ -185,6 +185,8 @@ add_filter( 'single_template', function ($single_template) {
      return $single_template;
 
 }, 10, 3 );
+add_post_type_support( 'projects', 'thumbnail' );    
+
 function create_posttype() {
  
     register_post_type( 'projects',

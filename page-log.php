@@ -11,10 +11,9 @@
 				$po->the_post();
 				?>
 
-				<a style="display:block" href="<?php the_permalink(); ?>" class="hpost-box ptp-<?php echo $k; ?>">
-
+				<a href="<?php the_permalink(); ?>" class="hpost-box ptp-<?php echo $k; ?>">
 					<div class="hpost-title">
-						<?php echo get_the_title(); ?>
+						<p><?php echo get_the_title(); ?></p>
 					</div>
 					<div class="hdate date">
 					<?php
@@ -23,4 +22,14 @@
 				</a> <?php
 			}
 		}
+	?>
+	</div>
+	<div class="asdf">
+
+	<a class="tr learn-more" href="">
+								<div class="learn-more-text">Learn More</div>
+							</a>
+	</div>
+</div>
+<?php
 		get_footer();
