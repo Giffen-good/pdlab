@@ -4,7 +4,7 @@
 <script src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>
 
 <div class="projects-in-page">
-	<div class="marquee"><?php single_cat_title(); ?></div>
+	<div class="marquee tr rem"><?php single_cat_title(); ?></div>
 	<div class="posts-bin">
 		<?php
 		$category = get_category( get_query_var( 'cat' ) );
@@ -26,10 +26,9 @@ $cat_id = $category->category_nicename;
 					?>
 					<div class="post-container">
 						
-							<a class="post-pic" href="<?php echo get_post_permalink(); ?>">
+							<a class="post-pic cen-xy" href="<?php echo get_post_permalink(); ?>">
 								<img src="<?php echo $thumb_url; ?>"/>
 							</a>
-							<div></div>
 						<a href="<?php  echo get_post_permalink(); ?>" style="display:block" class="post-title"><p><?php echo get_the_title(); ?></p></a> 
 					</div>
 	

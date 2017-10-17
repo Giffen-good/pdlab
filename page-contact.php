@@ -13,7 +13,7 @@
 					?>
 					<div class="cen-xy">
 						<img class="location-pic" src="<?php echo $thumb_url; ?>"/>
-						<div class="contact description"><div><p><?php the_content(); ?></p></div></div>
+						<div class="contact description ten"><div><p><?php the_content(); ?></p></div></div>
 					</div>
 <?php
 	}

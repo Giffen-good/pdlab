@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 </div><!-- #page -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer tr ten">
 		<div class="site-info"><a href="mailto:contact@pdlab.ca">contact@pdlab.ca</a></div><!-- .site-info -->
 		<p>prototype design lab 2017</p>
 		<div class="sm-icon">
@@ -31,7 +31,13 @@
 			<img class="footer-icon pintrest-icon" src="<?php echo get_template_directory_uri(); ?>/pic/pintrest.png" /></a>
 			
 	</footer><!-- #colophon -->
+<?php wp_footer(); ?>
+<?php if (is_front_page()){ ?>
+	<script src="<?php echo get_bloginfo('template_url') ?>/js/index.js"></script>
 
 
+</script>
+<?php }
+?>
 </body>
 </html>

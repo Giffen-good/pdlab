@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="jobs-page">
+<div class="jobs-page pfif">
 		<?php 
 $arg = array('post_type' => 'jobs');
 $ty = new WP_Query($arg);
@@ -21,15 +21,20 @@ if ($ty->have_posts()) {
 				?>
 			<a class="hpost-box">
 				<div class="bod job-title hpost-title"><?php the_sub_field('title'); ?></div>
-				<div class="bod availablility hdate"><?php the_sub_field('pt_ft'); ?></div>
+				<div class="bod availablility hdate ten"><?php the_sub_field('pt_ft'); ?></div>
 				
 			</a>
 			<div>
-				<div class="bod description"><?php the_sub_field('description'); ?></div>
-				<div class="ex">
+				<div class="bod description"><?php the_sub_field('description'); ?>
+					<a class="tr learn-more ten" href="<?php get_page_link(9); ?>">
+								<div class="learn-more-text">Apply Now</div>
+							</a>
+				</div>
+				<div class="opassz ex">
 					<span></span>
 					<span></span>
 				</div>
+				
 			</div>
 				
 <?php						

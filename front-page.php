@@ -1,4 +1,4 @@
-<?php get_header();
+<?php get_header('index');
 
 ?>
 <div class="home-page">
@@ -25,7 +25,7 @@
 								<div class="hpost-title">
 									<p><?php echo get_the_title(); ?></p>
 								</div>
-								<div class="hdate date">
+								<div class="hdate ten date">
 								<?php
 								echo get_the_date('d/m/y'); ?>
 								</div>
@@ -89,13 +89,13 @@
 						<img src="<?php the_field('who_we_are_image'); ?>"/>
 					</div>
 					<div class="ctwo">
-						<div class="cen-y inner-contain">
+						<div class="inner-contain">
 							<div class="ti tr about-us title scp"><p><?php the_field('who_we_are_title'); ?></p></div>
 							<div class="about-us-text">
 							
 							<?php the_field('who_we_are'); ?>
 							</div>
-							<a class="tr learn-more" href="<?php get_page_link(9); ?>">
+							<a class="tr learn-more ten" href="<?php echo get_page_link(9); ?>">
 								<div class="learn-more-text">Learn More</div>
 							</a>
 						</div> 

@@ -98,7 +98,7 @@ $gallery_array = [];
 
 
 		</div>
-		<div class="tu-two">
+		<div class="tu-two tr">
 			<a class="cen-y prp-1" href="<?php echo get_category_link(3); ?>">Small Projects</a>
 			<a class="cen-y prp-2" href="<?php echo get_category_link(4); ?>">Medium Projects</a>
 			<a class="cen-y prp-3" href="<?php echo get_category_link(5); ?>">Large Projects</a>

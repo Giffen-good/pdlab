@@ -25,7 +25,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	
-
 	<header id="masthead" class="site-header">
 		
 
@@ -50,5 +49,10 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
 	<div id="content" class="site-content">
+<script>
+	document.getElementById('content').classList += ' fade-in';
+</script>
+
+
+

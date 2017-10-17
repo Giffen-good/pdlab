@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="log-page">
+<div class="log-page pfif">
 	<div class="ti tr log-title"><p>Pdlab Log</p></div>
 	<div class="log">
 		<?php 
@@ -15,7 +15,7 @@
 					<div class="hpost-title">
 						<p><?php echo get_the_title(); ?></p>
 					</div>
-					<div class="hdate date">
+					<div class="hdate date ten">
 					<?php
 					echo get_the_date(); ?>
 					</div>
@@ -26,7 +26,7 @@
 	</div>
 	<div class="asdf">
 
-	<a class="tr learn-more" href="">
+	<a class="tr learn-more ten" href="">
 								<div class="learn-more-text">Learn More</div>
 							</a>
 	</div>

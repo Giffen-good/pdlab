@@ -12,15 +12,20 @@
 				</div>
 			</div>
 			<div class="cctwo">
-				<div class="gallery"></div>
+				<div class="lo cen-xy">
+				<div class="sliderr ">
 				<?php if (have_rows('post_gallery')) {
 					while (have_rows('post_gallery')) {
 						the_row();
 						?>
-						<img class="dimage" style="" src="<?php the_sub_field('post_images'); ?>"/><?php
+					<div style="width:30vw">
+						<img style="width:100%" class="dimage" style="" src="<?php the_sub_field('post_images'); ?>"/>
+					</div><?php
 					}
 					
 				}	?>
+				</div>
+				</div>
 			</div>
 			<?php
 		}

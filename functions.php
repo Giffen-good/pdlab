@@ -118,7 +118,14 @@ add_action( 'widgets_init', 'pdlab_widgets_init' );
  */
 function pdlab_scripts() {
 	wp_enqueue_style( 'pdlab-style', get_stylesheet_uri() );
+	if ( is_front_page() ) {
 
+	wp_enqueue_style( 'lil', get_template_directory_uri() . '/js/lil.css' );
+	
+
+	wp_enqueue_script('index', get_template_directory_uri() . '/js/index.js', '20151215', true );
+
+}
 	wp_enqueue_script('pdlab-jquery-3.2.1.min', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', '20151215', true );
 	wp_enqueue_script( 'pdlab-slick.min', get_template_directory_uri() . '/js/slick.min.js', '20151215', true );
 	wp_enqueue_script( 'transitions', get_template_directory_uri() . '/js/transitions.js', '20151215', true );
@@ -158,6 +165,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
 function console_log($narp) {
 	echo '<script>' . 'console.log(' . json_encode($narp) . '); </script>';
 }
@@ -170,10 +179,7 @@ function console_log($narp) {
   curl_close($ch); 
   return $result;
   }
-function remove_admin_login_header() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
-}
-add_action('get_header', 'remove_admin_login_header');
+
 
 add_filter( 'single_template', function ($single_template) {
 
@@ -220,4 +226,3 @@ function create_postype() {
     );
 }
 add_action( 'init', 'create_postype' );
-
