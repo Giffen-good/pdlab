@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="tuple">
-					<div class="bod team-text"><p><?php the_content(); ?></p></div>
+					<div class="bod team-text"><?php the_content(); ?></div>
 				</div>
 			</div>
 <?php

@@ -1,15 +1,23 @@
 <?php get_header();
 
 ?>
-<script src="//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js" type="text/javascript"></script>
+
 
 <div class="projects-in-page">
-	<div class="marquee tr rem"><?php single_cat_title(); ?></div>
-	<div class="posts-bin">
+<?php if (single_cat_title('',0) == 'large projects') { ?>
+		<div class="marquee marquee3k l3 tr rem" data-speed="125"><?php single_cat_title(); ?></div><?php
+	} else if (single_cat_title('',0) == 'medium projects') { ?>
+		<div class="marquee marquee3k l2 tr rem" data-speed="125"><?php single_cat_title(); ?></div><?php
+	} else { ?>
+	<div class="marquee marquee3k l1 tr rem" data-speed="125"><?php single_cat_title(); ?></div>
+<?php
+	}
+	?>
+	<div class="posts-bin ajax_posts">
 		<?php
 		$category = get_category( get_query_var( 'cat' ) );
-$cat_id = $category->category_nicename;
-		$arg = array('posts_per_page' => 12,
+ $cat_id = $category->category_nicename;
+		$arg = array('posts_per_page' => 9,
 			'post_type' => 'projects',
 			'category_name' => $cat_id);
 		console_log($cat_id);
@@ -30,6 +38,7 @@ $cat_id = $category->category_nicename;
 								<img src="<?php echo $thumb_url; ?>"/>
 							</a>
 						<a href="<?php  echo get_post_permalink(); ?>" style="display:block" class="post-title"><p><?php echo get_the_title(); ?></p></a> 
+						<div class="grow"></div>
 					</div>
 	
 						<?php
@@ -37,20 +46,16 @@ $cat_id = $category->category_nicename;
 		}
 		?>
 		</div>
+		<div class="asdf">
+
+	<a class="tr learn-more ten" href="">
+	<span style="display:none">1</span>
+	<div class="category-id" style="display:none"><?php echo $cat_id; ?></div>
+								<div class="learn-more-text" id="more_posts">Load More</div>
+							</a>
+	</div>
 </div><?php
 		get_footer(); ?>
 		<script>
-		$('.marquee').marquee({
-		//speed in milliseconds of the marquee
-		duration: 10000,
-		//gap in pixels between the tickers
-		gap: 500,
-		//time in milliseconds before the marquee will start animating
-		delayBeforeStart: 0,
-		//'left' or 'right'
-		direction: 'left',
-		//true or false - should the marquee be duplicated to show an effect of continues flow
-		duplicated: true,
-		startVisible: true
-		});
+
 	</script>

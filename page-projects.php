@@ -5,13 +5,13 @@ $gallery_array = [];
 	<div class="two-up">
 		<div class="tu-one">
 		<?php $arg = array('post_type' => 'projects', 'category_name' => 'small-projects');
-	
 		$po = new WP_Query($arg);
 		$small_gallery = [];
 		if ($po->have_posts()) { 
 			while($po->have_posts()) {
 				$po->the_post();
 				if ( has_post_thumbnail() ) { 
+					
 							$thumb_id = get_post_thumbnail_id();
 							$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 							$thumb_url = $thumb_url_array[0]; 
@@ -23,6 +23,7 @@ $gallery_array = [];
 <?php
 			}
 		} wp_reset_query();
+
 
 		$arg = array('post_type' => 'projects',
 							'category_name' => 'medium-projects');
@@ -43,6 +44,8 @@ $gallery_array = [];
 <?php
 			}
 		} wp_reset_query();
+
+	
 		$arg = array('post_type' => 'projects',
 							'category_name' => 'large-projects');
 		$med = new WP_Query($arg);
@@ -74,7 +77,7 @@ $gallery_array = [];
 							$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 							$thumb_url = $thumb_url_array[0];
 								?>
-				<img class="tu-image cen-xy" id="dfirst" style="width:75%;position:absolute" src="<?php echo $thumb_url; ?>" />
+				<img class="tu-image zen cen-xy" id="dfirst" style="width:75%;position:absolute" src="<?php echo $thumb_url; ?>" />
 				<?php
 				}
 			}
@@ -99,9 +102,11 @@ $gallery_array = [];
 
 		</div>
 		<div class="tu-two tr">
-			<a class="cen-y prp-1" href="<?php echo get_category_link(3); ?>">Small Projects</a>
-			<a class="cen-y prp-2" href="<?php echo get_category_link(4); ?>">Medium Projects</a>
-			<a class="cen-y prp-3" href="<?php echo get_category_link(5); ?>">Large Projects</a>
+			<div class="cen-y flexx">
+			<a class="prp-1" href="<?php echo get_category_link(3); ?>">Small Projects</a>
+			<a class="prp-2" href="<?php echo get_category_link(4); ?>">Medium Projects</a>
+			<a class="prp-3" href="<?php echo get_category_link(5); ?>">Large Projects</a>
+			</div>
 		</div>
 	</div>
 </div>

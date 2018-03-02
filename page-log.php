@@ -1,10 +1,17 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$cat_id = get_query_var('cat');
+?>
+
 
 <div class="log-page pfif">
 	<div class="ti tr log-title"><p>Pdlab Log</p></div>
-	<div class="log">
+	<div class="log ajax_posts">
 		<?php 
-		$arg = array('posts_per_page' => 10);
+
+$page     = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 1;
+ 
+		$arg = array('posts_per_page' => 10,
+						'paged' => $page);
 		$po = new WP_Query($arg);
 		if ($po->have_posts() ) {
 			while ( $po->have_posts() ) {
@@ -27,7 +34,8 @@
 	<div class="asdf">
 
 	<a class="tr learn-more ten" href="">
-								<div class="learn-more-text">Learn More</div>
+	<span style="display:none">1</span>
+								<div class="learn-more-text" id="more_posts">Load More</div>
 							</a>
 	</div>
 </div>

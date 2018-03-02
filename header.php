@@ -23,6 +23,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="nav-icon3" class="open-overlay">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			  <span></span>
+		</div>
 <div id="page" class="site">
 	
 	<header id="masthead" class="site-header">
